@@ -19,7 +19,8 @@ jobs:
     - name: Run single line script
       run: 
         ls -la    
-    - uses: stcalica/update-lambda
+    - name: AWS Update Lambda Action
+      uses: stcalica/update-lambda@0.0.2
       with:
         package: index.zip
         function-name: badmagicGetShopItems
