@@ -1,0 +1,22 @@
+name: CI
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: Run a multi-line script
+      run:
+        ls -la
+    - name: Create Zip File
+      uses: montudor/action-zip@v0.1.0
+      with:
+        args: zip  -r ./index.zip ./index.js
+    - name: Run single line script
+      run: 
+        ls -la    
+    
